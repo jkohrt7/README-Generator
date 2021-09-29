@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "inquirer": "^8.1.5"
+  },
+  "name": "hw9_readme_generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node src/questions.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkohrt7/README-Generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jkohrt7/README-Generator/issues"
+  },
+  "homepage": "https://github.com/jkohrt7/README-Generator#readme",
+  "description": ""
+}
