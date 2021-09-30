@@ -1,5 +1,3 @@
-const inquirer = require('inquirer');
-
 const questions = [
     {
         type: 'input',
@@ -57,7 +55,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: "Provide your Github username for the questions section: \n",
+        message: "Provide your Github username for the questions and badges section: \n",
         name: 'username'
     },
     {
@@ -67,17 +65,4 @@ const questions = [
     }
 ];
 
-function init() {
-    inquirer.prompt(questions)
-    .then(writeToFile)
-    .catch((error) => {
-        console.log(error)
-    });
-}
-
-let writeToFile = function (answers){
-    console.log('hello there');
-}
-
-init();
-
+module.exports = questions;
