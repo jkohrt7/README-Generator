@@ -1,6 +1,8 @@
 const fs = require('fs');
+const { forEach } = require('./questions');
 
 let writeToFile = function(responses) {
+    console.log(responses)
     //Add title and badges
     let fileText = '# ' + responses['title'] + '\n'
 
@@ -46,11 +48,14 @@ let writeToFile = function(responses) {
     fileText += responses['usage'] + '\n'
 
     //How to Contribute
-    fileText += "## How to Contribute\n"
-    fileText += responses['contribute'] + '\n';
-    if (responses['covenant'] === 'Yes'){
-        fileText += 'Additionally, please adhere to the [Contributor Covenant Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/).\n'
+    if(!responses['contribute']) {
+        fileText += "## How to Contribute\n"
+        fileText += responses['contribute'] + '\n';
+        if (responses['covenant'] === 'Yes'){
+            fileText += 'Additionally, please adhere to the [Contributor Covenant Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/).\n'
+        }
     }
+    
 
     //Questions
     fileText += "## Questions\n";
@@ -60,7 +65,17 @@ let writeToFile = function(responses) {
     
     //Credits
     fileText += '## Credits\n';
-    fileText += responses['credits'] + '\n';
+    if(responses.hasOwnProperty('credits')){
+        responses.credits.forEach(element => {
+            let urlIndex = element.indexOf('http');
+            if(urlIndex !== -1) {
+                let name = element.slice(0,urlIndex);
+                let url = element.slice(urlIndex);
+                
+                fileText += `- [${name}](${url}) \n`
+            }
+        });
+    }
 
     //License
     fileText += '## License\n'
@@ -68,7 +83,7 @@ let writeToFile = function(responses) {
 
     console.log(fileText)
 
-    fs.writeFile('README.md', fileText, function(err) {
+    fs.writeFile('README_generated.md', fileText, function(err) {
         if(err) {
             console.log("error"+ err)
         }
