@@ -1,9 +1,12 @@
+//External Modules
 const inquirer = require('inquirer');
-
-const questions = require('./questions.js');
 const writeToFile = require('./writeToFile.js');
 
-function init() {
+//Local Modules
+const questions = require('./questions.js');
+
+async function init() {
+
     inquirer.prompt(questions)
     .then(writeToFile)
     .catch((error) => {
