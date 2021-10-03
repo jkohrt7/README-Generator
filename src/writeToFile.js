@@ -56,7 +56,6 @@ let writeToFile = function(responses) {
         }
     }
     
-
     //Questions
     fileText += "## Questions\n";
     fileText += "If you have any questions about using or contibuting to the project, you can contact me via email or though github:\n";
@@ -79,15 +78,30 @@ let writeToFile = function(responses) {
 
     //License
     fileText += '## License\n'
-    fileText += responses['license'] + '\n';
 
-    console.log(fileText)
+    switch (licenseChoice) {
+        case 'Apache License 2.0' :
+            fileText += '[Apache License 2.0](https://opensource.org/licenses/Apache-2.0)\n';
+            break;
+        case 'GNU GPLv3' :
+            fileText += '[GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.txt)\n';
+            break;
+        case 'ISC' :
+            fileText += '[ISC](https://opensource.org/licenses/ISC)\n';
+            break;
+        case 'MIT' :
+            fileText += '[MIT](https://opensource.org/licenses/MIT)\n';
+            break;
+        case 'The Unlicense' :
+            fileText += '[The Unlicense](https://opensource.org/licenses/unlicense)\n';
+            break;
+    }
 
     fs.writeFile('README_generated.md', fileText, function(err) {
         if(err) {
             console.log("error"+ err)
         }
-        console.log("success");
+        console.log("Successfully Created README_generated.md");
     })
 }
 

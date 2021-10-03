@@ -51,22 +51,22 @@ const questions = [
         type : "input",
         message : "Enter the name of a person or resource you would like to give \ncredit to followed by a link to their github page or website. \nEnter 'stop' to stop adding names.\n",
         name : "credits_stop",
-        validate(value, answers) {
+        validate: (value, answers) => {
             if (value !== 'stop') {
                 //add it to the answers array
-                console.log("")
                 if(answers.hasOwnProperty('credits')){
-                    answers.credits.push(value)
+                    answers.credits.push(value);
                 } else {
                     answers.credits = [value];
                 }
-
-                return false;
+                process.argv[0] = "";
+                return "Name Accepted. Press ESC to clear.";
             }
             else{
                 return true;
             }
         }
+        
     },
     {
         type: 'list',

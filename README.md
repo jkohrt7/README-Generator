@@ -27,8 +27,7 @@ The 'Credits' section will continually ask you to enter names until you type 'st
          Enter 'stop' to stop adding names. 
          > John Doe http://www.johndoe.com
     ```
-## How to Contribute
-undefined
+
 ## Questions
 If you have any questions about using or contibuting to the project, you can contact me via email or though github:
 - Email: jkohrt7@gmail.com
