@@ -36,4 +36,4 @@ If you have any questions about using or contibuting to the project, you can con
 - [inquirer ](https://www.npmjs.com/package/inquirer) 
 - [@jkohrt7 ](https://github.com/jkohrt7 ) 
 ## License
-MIT
+[MIT](https://opensource.org/licenses/MIT)
