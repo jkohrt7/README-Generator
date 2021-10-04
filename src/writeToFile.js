@@ -26,11 +26,11 @@ let writeToFile = function(responses) {
     }
     
     //Add Description
-    fileText += '## Description\n'
+    fileText += '\n## Description\n'
     fileText += responses['description'] + '\n'
     
     //Table of contents
-    fileText += '## Contents\n';
+    fileText += '\n## Contents\n';
     fileText += '- [Installation](#installation)\n';
     fileText += '- [Usage](#usage)\n';
     if('contribute' in responses){
@@ -40,16 +40,16 @@ let writeToFile = function(responses) {
     fileText += '- [License](#license)\n';
 
     //Installation
-    fileText += '## Installation\n';
+    fileText += '\n## Installation\n';
     fileText += responses['installation'] + '\n';
 
     //Usage
-    fileText += '## Usage\n';
+    fileText += '\n## Usage\n';
     fileText += responses['usage'] + '\n'
 
     //How to Contribute
     if(!responses['contribute']) {
-        fileText += "## How to Contribute\n"
+        fileText += "\n## How to Contribute\n"
         fileText += responses['contribute'] + '\n';
         if (responses['covenant'] === 'Yes'){
             fileText += 'Additionally, please adhere to the [Contributor Covenant Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/).\n'
@@ -57,13 +57,13 @@ let writeToFile = function(responses) {
     }
     
     //Questions
-    fileText += "## Questions\n";
+    fileText += "\n## Questions\n";
     fileText += "If you have any questions about using or contibuting to the project, you can contact me via email or though github:\n";
     fileText += "- Email: " + responses['email'] + '\n';
     fileText += "- Github: [@" + responses['username'] + "](https://github.com/" + responses['username'] + ')\n'
     
     //Credits
-    fileText += '## Credits\n';
+    fileText += '\n## Credits\n';
     if(responses.hasOwnProperty('credits')){
         responses.credits.forEach(element => {
             let urlIndex = element.indexOf('http');
@@ -77,7 +77,7 @@ let writeToFile = function(responses) {
     }
 
     //License
-    fileText += '## License\n'
+    fileText += '\n## License\n'
 
     switch (licenseChoice) {
         case 'Apache License 2.0' :

@@ -3,6 +3,9 @@
 ## Description
 README Generator is a node.js program for creating professional READMEs through the command line.
 By providing a simple, consistent structure as well as links & badges for your license of choice, it helps reduce the amount of time you need to spend on a READMEs for your repos.
+
+This README was generated using the program, so if you like what you see, read on!
+
 ## Contents
 - [Installation](#installation)
 - [Usage](#usage)
@@ -36,8 +39,10 @@ For a more detailed walkthrough, you can reference the following video:
 If you have any questions about using or contibuting to the project, you can contact me via email or though github:
 - Email: jkohrt7@gmail.com
 - Github: [@jkohrt7](https://github.com/jkohrt7)
+
 ## Credits
 - [inquirer ](https://www.npmjs.com/package/inquirer) 
 - [@jkohrt7 ](https://github.com/jkohrt7 ) 
+
 ## License
 [MIT](https://opensource.org/licenses/MIT)
