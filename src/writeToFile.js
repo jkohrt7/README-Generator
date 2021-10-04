@@ -2,7 +2,7 @@ const fs = require('fs');
 const { forEach } = require('./questions');
 
 let writeToFile = function(responses) {
-    console.log(responses)
+    //DEBUG: console.log(responses)
     //Add title and badges
     let fileText = '# ' + responses['title'] + '\n'
 

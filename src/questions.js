@@ -1,27 +1,27 @@
 const questions = [
     {
         type: 'input',
-        message: 'Please enter the title of your project: \n',
+        message: '~~Title~~\nPlease enter the title of your project: \n',
         name: 'title'
     },
     {
         type: 'editor',
-        message: 'Provide a short description explaining the what, why, and how of your project. Save and close the editor to submit your text. \n',
+        message: '~~Description~~\nProvide a short description explaining the what, why, and how of your project. Save and close the editor to submit your text. \n',
         name: 'description'
     },
     {
         type: 'editor',
-        message: 'What are the steps required to install your project? Provide a step-by-step \ndescription of how to get the development environment running: \n',
+        message: '~~Installation~~\nWhat are the steps required to install your project? Provide a step-by-step \ndescription of how to get the development environment running: \n',
         name: 'installation'
     },
     {
         type: 'editor',
-        message: 'Provide instructions and examples for use. Include screenshots with the md format ![alt text](img/screenshot.png): \n',
+        message: '~~Usage~~\nProvide instructions and examples for use. Include screenshots by placing them in the src/img folder and referencing them with the md format ![alt text](src/img/screenshot.[jpg or png]): \n',
         name: 'usage'
     },
     {
         type: 'list',
-        message: 'Would you like to include contribution guidelines?',
+        message: '~~How to Contribute~~\nWould you like to include contribution guidelines?',
         name: 'contribute_choice',
         choices: ['Yes', 'No']
     },
@@ -44,23 +44,26 @@ const questions = [
     },
     {
         type: 'editor',
-        message: 'Provide a few test examples for your application and describe how to run them: \n',
+        message: '~~Tests~~\nProvide a few test examples for your application and describe how to run them: \n',
         name: 'tests'
     },
     {
         type : "input",
-        message : "Enter the name of a person or resource you would like to give \ncredit to followed by a link to their github page or website. \nEnter 'stop' to stop adding names.\n",
+        message : "~~Credits~~\nEnter the name of a person or resource you would like to give \ncredit to followed by a link to their github page or website. \nEnter 'stop' to stop adding names.\n",
         name : "credits_stop",
         validate: (value, answers) => {
-            if (value !== 'stop') {
+            
+            if (value !== 'stop' && value.indexOf('http') != -1) {
                 //add it to the answers array
                 if(answers.hasOwnProperty('credits')){
                     answers.credits.push(value);
                 } else {
                     answers.credits = [value];
                 }
-                process.argv[0] = "";
-                return "Name Accepted. Press ESC to clear.";
+                return "Name & link accepted. Remove text to add another name or type 'stop' to finish.";
+            }
+            else if(value !== 'stop'){
+                return "Rejected. You are missing a valid url; please include 'http' at the beginning";
             }
             else{
                 return true;
@@ -70,19 +73,19 @@ const questions = [
     },
     {
         type: 'list',
-        message: 'Select a license:',
+        message: '~~License~~\nSelect a license:',
         name: 'license',
         choices: ['Apache License 2.0','GNU GPLv3','ISC','MIT','The Unlicense'],
         loop: true
     },
     {
         type: 'input',
-        message: "Provide your Github username for the questions and badges section: \n",
+        message: "~~Questions/Contact~~\nPlease provide your Github username\n",
         name: 'username'
     },
     {
         type: 'input',
-        message: 'Provide your email for the questions section: \n',
+        message: 'Please provide your email or other primary form of contact for the questions section: \n',
         name: 'email'
     }
 ];

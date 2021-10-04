@@ -22,11 +22,13 @@ Questions will either ask you to enter your answer manually (using the keyboard 
 
 The 'Credits' section will continually ask you to enter names until you type 'stop' and hit enter. If you want a name to link to a webpage, simply type/paste the link after the name like so:
 
-    ```? Enter the name of a person or resource you would like to give
+    ? Enter the name of a person or resource you would like to give
          credit to followed by a link to their github page or website.
          Enter 'stop' to stop adding names. 
          > John Doe http://www.johndoe.com
-    ```
+    
+For a more detailed walkthrough, you can reference the following video:
+[README Generator walkthrough](https://youtu.be/ocTyePoMty0)
 
 ## Questions
 If you have any questions about using or contibuting to the project, you can contact me via email or though github:
