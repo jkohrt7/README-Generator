@@ -4,11 +4,13 @@
 README Generator is a node.js program for creating professional READMEs through the command line.
 By providing a simple, consistent structure as well as links & badges for your license of choice, it helps reduce the amount of time you need to spend on a READMEs for your repos.
 ## Contents
-- [Installation]("#installation")
-- [Usage]("#usage")
-- [Credits]("#credits")
-- [License]("#license")
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+
 ## Installation
+
 You'll need the following already installed in order to use the program:
 
 - [node.js](https://nodejs.org/)

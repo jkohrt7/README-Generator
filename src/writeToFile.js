@@ -31,13 +31,13 @@ let writeToFile = function(responses) {
     
     //Table of contents
     fileText += '## Contents\n';
-    fileText += '- [Installation]("#installation")\n';
-    fileText += '- [Usage]("#usage")\n';
+    fileText += '- [Installation](#installation)\n';
+    fileText += '- [Usage](#usage)\n';
     if('contribute' in responses){
-        fileText += '- [How to Contribute]("#how-to-contribute")\n';
+        fileText += '- [How to Contribute](#how-to-contribute)\n';
     }
-    fileText += '- [Credits]("#credits")\n';
-    fileText += '- [License]("#license")\n';
+    fileText += '- [Credits](#credits)\n';
+    fileText += '- [License](#license)\n';
 
     //Installation
     fileText += '## Installation\n';
