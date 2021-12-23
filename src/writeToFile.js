@@ -33,7 +33,7 @@ let writeToFile = function(responses) {
     fileText += '\n## Contents\n';
     fileText += '- [Installation](#installation)\n';
     fileText += '- [Usage](#usage)\n';
-    if('contribute' in responses){
+    if(responses.contribute_choice === 'No'){
         fileText += '- [How to Contribute](#how-to-contribute)\n';
     }
     fileText += '- [Credits](#credits)\n';
